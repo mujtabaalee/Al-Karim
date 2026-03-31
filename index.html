@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Karam | Official Online Store</title>
+    <!-- Google Fonts: Editorial Playfair and Inter for clean UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span class="top-text">Complimentary Shipping on Orders Over Rs. 5000</span>
+            <div class="top-links">
+                <a href="tel:+923378901602" class="top-contact"><i class="fas fa-phone-alt"></i> +92 337 8901602</a>
+                <div class="currency-wrap">
+                    <select class="currency-selector">
+                        <option>PKR</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>GBP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search Style...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+
+            <a href="index.html" class="logo">
+                <h1>AL KARAM</h1>
+                <span>CLOTH DEPO</span>
+            </a>
+            
+            <div class="header-actions">
+                <a href="#" class="action-icon d-none-mobile"><i class="far fa-user"></i> <span class="action-text">Account</span></a>
+                <button id="cart-toggle" class="action-icon cart-icon" style="background: none; border: none; cursor: pointer; font-family: inherit;">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" style="transform: scale(0);">0</span>
+                    <span class="action-text d-none-mobile">Cart</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="catalog.html?category=new">NEW ARRIVALS</a></li>
+                <li><a href="catalog.html?category=brands">BRANDS</a></li>
+                <li><a href="catalog.html?category=lawn">LAWN COLLECTION</a></li>
+                <li><a href="catalog.html?category=wedding">WEDDING EDIT</a></li>
+                <li><a href="catalog.html?category=sale" class="text-red">SALE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Editorial Split -->
+    <section class="hero-split">
+        <div class="hero-half" style="background-image: url('https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=1200'); border-right: 2px solid white;">
+            <div class="hero-content">
+                <h2>The Summer Edit</h2>
+                <a href="catalog.html?category=lawn" class="btn btn-outline" style="color:white; border-color:white;">View Collection</a>
+            </div>
+        </div>
+        <div class="hero-half" style="background-image: url('https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            <div class="hero-content">
+                <h2>Bridal Couture</h2>
+                <a href="catalog.html?category=wedding" class="btn btn-outline" style="color:white; border-color:white;">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="catalog container section">
+        <div class="section-title text-center">
+            <h3>Curated Highlights</h3>
+            <div class="title-line"></div>
+        </div>
+        
+        <!-- JS injects 3 items here -->
+        <div class="catalog-grid" id="featured-grid">
+        </div>
+
+        <div class="text-center mt-3" style="margin-top: 3rem;">
+            <a href="catalog.html?category=all" class="btn btn-dark">Explore Full Collection</a>
+        </div>
+    </section>
+
+    <!-- Editorial Banner -->
+    <section class="container mb-5" style="margin-bottom: 5rem;">
+        <div style="background-image: url('https://images.pexels.com/photos/974911/pexels-photo-974911.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; height: 50vh; display:flex; align-items:center; justify-content:center;">
+             <div style="background: rgba(255,255,255,0.9); padding: 40px; text-align: center; max-width: 500px;">
+                 <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 15px; letter-spacing: 2px;">End of Season Clearance</h3>
+                 <p style="margin-bottom: 25px; color: var(--text-light);">Up to 50% off on selected luxury pret and unstitched fabrics.</p>
+                 <a href="catalog.html?category=sale" class="btn btn-dark">Shop Sale</a>
+             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Client Services</h4>
+                    <ul>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Al Karam</h4>
+                    <ul>
+                        <li><a href="#">Our Heritage</a></li>
+                        <li><a href="#">Boutiques</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h4>The Fashion Letter</h4>
+                    <p>Subscribe to receive updates on exclusive collections and private sales.</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Al Karam Cloth Depo. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-apple"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Sidebar Shared -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">Rs. 0</span>
+            </div>
+            <button class="btn btn-dark btn-full mt-3">Proceed to Secure Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal Shared -->
+    <div class="modal-overlay" id="quick-view-overlay">
+        <div class="quick-view-modal">
+            <button class="close-modal" id="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-content-grid">
+                <div class="modal-img-col">
+                    <img id="modal-img" src="" alt="Product" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="modal-info-col">
+                    <span id="modal-vendor" class="product-vendor"></span>
+                    <h2 id="modal-title" style="font-family: var(--font-heading); margin-bottom: 10px; font-size:1.8rem; letter-spacing:1px;"></h2>
+                    <h3 id="modal-price" class="product-price" style="font-size: 1.5rem; margin-bottom:15px; color: var(--text-main);"></h3>
+                    <p id="modal-desc" class="product-desc" style="color: var(--text-light); margin-bottom: 25px; line-height:1.6;"></p>
+                    <div class="modal-sizes" style="margin-bottom: 30px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:10px;">Select Size:</span>
+                        <div class="size-options" style="display:flex; gap:10px;">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn active">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                        </div>
+                    </div>
+                    <button id="modal-add-cart" class="btn btn-dark btn-full">ADD TO BAG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

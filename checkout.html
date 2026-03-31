@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | Al Karam</title>
+    <!-- Google Fonts: Editorial Playfair and Inter for clean UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .checkout-container { display: flex; flex-wrap: wrap; gap: 50px; margin-top: 50px; }
+        .checkout-form-col { flex: 1 1 60%; }
+        .checkout-summary-col { flex: 1 1 35%; background: var(--bg-light); padding: 40px; border: 1px solid var(--border); border-radius: 4px; height: max-content;}
+        
+        .checkout-section { margin-bottom: 40px; }
+        .checkout-section h2 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        
+        .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+        .form-group { flex: 1; display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+        .form-group input, .form-group select { padding: 15px; border: 1px solid var(--border); outline: none; font-family: inherit; font-size: 0.95rem; }
+        .form-group input:focus { border-color: var(--black); }
+
+        .payment-method { border: 1px solid var(--border); padding: 20px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.2s;}
+        .payment-method:hover { border-color: var(--black); }
+        .payment-method input { transform: scale(1.3); }
+
+        .summary-item { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 20px;}
+        .summary-item img { width: 60px; height: 80px; object-fit: cover; }
+        .summary-info { flex: 1; }
+        .summary-title { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 5px; }
+        .summary-price { font-size: 0.95rem; font-weight: 500; color: var(--text-main); }
+        .summary-total { display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;}
+        
+        @media(max-width: 992px) { .checkout-container { flex-direction: column; } }
+        @media(max-width: 576px) { .form-row { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <!-- Main Header Simplified for Checkout -->
+    <header class="main-header" style="border-bottom: 1px solid var(--border);">
+        <div class="container header-inner" style="justify-content: center;">
+            <a href="index.html" class="logo">
+                <h1>AL KARAM</h1>
+                <span>SECURE CHECKOUT</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container mb-5">
+        <div class="checkout-container">
+            <!-- Left Column: Form -->
+            <div class="checkout-form-col">
+                <div class="checkout-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number (for Courier)</label>
+                            <input type="tel" placeholder="+92 300 0000000" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2>Shipping Address</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label>Street Address</label>
+                        <input type="text" placeholder="House no, Street name, Area" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Province/State</label>
+                            <select>
+                                <option>Sindh</option>
+                                <option>Punjab</option>
+                                <option>Islamabad Capital Territory</option>
+                                <option>Khyber Pakhtunkhwa</option>
+                                <option>Balochistan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2>Payment Method</h2>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" checked>
+                        <span>Cash on Delivery (COD)</span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment">
+                        <span>Credit / Debit Card <i class="fab fa-cc-visa" style="margin-left:10px;"></i> <i class="fab fa-cc-mastercard"></i></span>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment">
+                        <span>Direct Bank Transfer</span>
+                    </label>
+                </div>
+
+                <button class="btn btn-dark btn-full mt-3" style="font-size: 1.1rem; padding: 20px;" onclick="placeOrder()">CONFIRM & PLACE ORDER</button>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="checkout-summary-col">
+                <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 30px;">Order Summary</h2>
+                <div id="checkout-items">
+                    <!-- Items injected here by script -->
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span id="checkout-total">Rs. 0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimum Footer -->
+    <footer class="footer" style="padding: 20px 0; border-top: 1px solid var(--border); background: var(--white); color: var(--text-light); margin-top: 50px;">
+        <div class="container text-center">
+            <p style="font-size:0.8rem;">&copy; 2026 Al Karam Cloth Depo. Verified SSL Secure Checkout.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inline script to handle the dedicated checkout data directly from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutItemsDiv = document.getElementById('checkout-items');
+            const checkoutTotalSpan = document.getElementById('checkout-total');
+            
+            let cart = [];
+            const savedCart = localStorage.getItem('alkaram_cart');
+            if (savedCart) {
+                try {
+                    cart = JSON.parse(savedCart);
+                } catch (e) { console.error("Could not parse cart data."); }
+            }
+
+            if (cart.length === 0) {
+                checkoutItemsDiv.innerHTML = '<p style="color:red; text-align:center;">Your cart is empty.</p>';
+                document.querySelector('.checkout-form-col').style.opacity = '0.5';
+                document.querySelector('.checkout-form-col').style.pointerEvents = 'none';
+                return;
+            }
+
+            let total = 0;
+            cart.forEach(item => {
+                const priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
+                total += priceNum;
+
+                checkoutItemsDiv.innerHTML += `
+                    <div class="summary-item">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="summary-info">
+                            <h4 class="summary-title">${item.title}</h4>
+                            <p class="summary-price">${item.price}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            checkoutTotalSpan.textContent = 'Rs. ' + total.toLocaleString();
+        });
+
+        function placeOrder() {
+            alert("Order Confirmed! Checkout logic executed successfully. Returning Home.");
+            localStorage.removeItem('alkaram_cart'); // Clear cart
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
